@@ -10,7 +10,7 @@ export async function POST(req) {
     const idSala = formData.get("idSala");
     const categoria = formData.get("categoria");
     const editora = formData.get("editora");
-    const linkImagem = formData.get("linkImagem");
+    const linkImagem = formData.get("linkimagem");
 
     const sql = `
       INSERT INTO jogos (id_sala, titulo, categoria, editora, linkImagem)
