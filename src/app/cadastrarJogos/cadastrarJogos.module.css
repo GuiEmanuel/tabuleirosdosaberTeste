@@ -1,0 +1,116 @@
+/* Variáveis */
+:root {
+  --azul-principal: #1E2B67;
+  --azul-claro: #2e3f9e;
+  --branco: #ffffff;
+  --cinza-claro: #f4f6fb;
+  --cinza-texto: #444;
+}
+
+/* Header */
+.header {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header a {
+  background-color: var(--branco);
+  color: var(--azul-principal);
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.header a:hover {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+}
+
+/* Container */
+.container {
+  min-height: calc(100vh - 90px);
+  background-color: var(--cinza-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+/* Formulário */
+.formulario {
+  background-color: var(--branco);
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Labels */
+.formulario label {
+  font-weight: bold;
+  color: var(--azul-principal);
+  margin-top: 8px;
+}
+
+/* Inputs */
+.formulario input[type="text"] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.formulario input[type="text"]:focus {
+  outline: none;
+  border-color: var(--azul-principal);
+}
+
+/* Radios */
+.formulario div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cinza-texto);
+}
+
+/* Botão */
+.formulario button {
+  margin-top: 16px;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  background-color: var(--azul-claro);
+}
+
+/* Mensagem */
+.formulario p {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--azul-principal);
+}
