@@ -6,12 +6,12 @@ export default async function Sala({ params }) {
   const { id } = await params;
 
   const resJogos = await fetch(
-  `${process.env.NEXT_PUBLIC_API_URL}/api/jogos?id_sala=${id}`,
+  `/api/jogos?id_sala=${id}`,
   { cache: "no-store" }
 );
 
 const resSala = await fetch(
-  `${process.env.NEXT_PUBLIC_API_URL}/api/salas?id=${id}`,
+  `/api/salas?id=${id}`,
   { cache: "no-store" }
 );
 
