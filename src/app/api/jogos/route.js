@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import database from "@/database/database";
 
 export async function GET(request) {
@@ -23,7 +25,8 @@ export async function GET(request) {
     return Response.json(responseDB.rows, { status: 200 });
 
   } catch (error) {
-    console.error(error);
+    console.error("ERRO API JOGOS:", error);
+
     return Response.json(
       { error: "Erro ao buscar jogos" },
       { status: 500 }
