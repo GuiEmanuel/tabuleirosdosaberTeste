@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./sala.module.css";
 
 export default async function Sala({ params }) {
-  const { id } = await params;
+  const { id } = params;
 
   const resJogos = await fetch(
     `/api/jogos?id_sala=${id}`,
