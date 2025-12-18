@@ -1,12 +1,10 @@
-import {Pool} from "pg"
-
-const databaseUrl = process.env.DATABASE_URL;
+import { Pool } from "pg";
 
 const database = new Pool({
-    connectionString: databaseUrl, 
-    ssl: {
-     rejectUnauthorized: false
-  }
-})
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 export default database;
