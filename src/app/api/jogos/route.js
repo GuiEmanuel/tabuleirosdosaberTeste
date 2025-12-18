@@ -5,11 +5,13 @@ import database from "@/database/database";
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
-    const idSala = searchParams.get("id_sala");
+    const idSalaParam = searchParams.get("id_sala");
 
-    if (!idSala) {
+    const idSala = Number(idSalaParam);
+
+    if (!idSala || Number.isNaN(idSala)) {
       return Response.json(
-        { error: "id_sala é obrigatório" },
+        { error: "id_sala inválido" },
         { status: 400 }
       );
     }
