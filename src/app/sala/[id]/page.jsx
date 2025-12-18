@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import styles from "./sala.module.css";
 
@@ -14,8 +16,8 @@ export default async function Sala({ params }) {
     { cache: "no-store" }
   );
 
-  if (!resJogos.ok) {
-    throw new Error("Erro ao buscar jogos");
+  if (!resJogos.ok || !resSala.ok) {
+    throw new Error("Erro ao buscar dados");
   }
 
   const jogos = await resJogos.json();
@@ -33,7 +35,7 @@ export default async function Sala({ params }) {
       <div className={styles.vitrine}>
         {jogos.map(jogo => (
           <div className={styles.card} key={jogo.id_jogo}>
-            <img src={jogo.linkimagem} alt="" />
+            <img src={jogo.linkimagem} alt={jogo.titulo} />
             <h3>{jogo.titulo}</h3>
             <p>{jogo.categoria}</p>
             <p>{jogo.editora}</p>
