@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 export default async function Sala({ params }) {
   const { id } = params;
 
-  const headersList = headers();
+  const headersList = await headers();
   const host = headersList.get("host");
   const protocol =
     process.env.NODE_ENV === "development" ? "http" : "https";
