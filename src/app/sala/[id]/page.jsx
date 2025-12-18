@@ -6,18 +6,22 @@ import styles from "./sala.module.css";
 export default async function Sala({ params }) {
   const { id } = params;
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
   const resJogos = await fetch(
-    `/api/jogos?id_sala=${id}`,
+    `${baseUrl}/api/jogos?id_sala=${id}`,
     { cache: "no-store" }
   );
 
   const resSala = await fetch(
-    `/api/salas?id=${id}`,
+    `${baseUrl}/api/salas?id=${id}`,
     { cache: "no-store" }
   );
 
   if (!resJogos.ok || !resSala.ok) {
-    throw new Error("Erro ao buscar dados");
+    console.error("STATUS JOGOS:", resJogos.status);
+    console.error("STATUS SALA:", resSala.status);
+    throw new Error("Erro ao buscar jogos");
   }
 
   const jogos = await resJogos.json();
