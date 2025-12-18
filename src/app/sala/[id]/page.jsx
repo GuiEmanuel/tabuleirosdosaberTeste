@@ -26,6 +26,23 @@ export default async function Sala({ params }) {
     throw new Error("Erro ao buscar jogos");
   }
 
+
+
+
+  console.log("STATUS JOGOS:", resJogos.status);
+console.log("URL:", resJogos.url);
+
+const textoErro = await resJogos.text();
+console.log("RESPOSTA:", textoErro);
+
+if (!resJogos.ok) {
+  throw new Error("Erro ao buscar jogos");
+}
+
+
+
+
+
   const jogos = await resJogos.json();
   const sala = await resSala.json();
 
