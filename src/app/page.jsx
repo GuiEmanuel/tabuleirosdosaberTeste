@@ -17,11 +17,11 @@ export default function Home() {
 
       <div className={styles.salas}>
 
-        <Link href="/sala?id=1">
+        <Link href="/sala/1">
           Ver jogos do Forja
         </Link>
 
-        <Link href="/sala?id=2">
+        <Link href="/sala/2">
           Ver jogos do Tabulando
         </Link>
       </div>

@@ -3,18 +3,18 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import styles from "./sala.module.css";
 
-export default async function Sala({ searchParams }) {
-  const id = searchParams.id;
+export default async function Sala({ params }) {
+  const { id } = params;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   const resJogos = await fetch(
-    `${baseUrl}/api/jogos?id_sala=${id}`,
+    `/api/jogos?id_sala=${id}`,
     { cache: "no-store" }
   );
 
   const resSala = await fetch(
-    `${baseUrl}/api/salas?id=${id}`,
+    `/api/salas?id=${id}`,
     { cache: "no-store" }
   );
 
