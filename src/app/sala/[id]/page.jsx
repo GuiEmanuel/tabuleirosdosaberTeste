@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./sala.module.css";
 
 export default async function Sala({ params }) {
-  const { id } = params;
+  const id = params.id;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
