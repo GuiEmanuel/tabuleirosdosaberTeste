@@ -3,8 +3,8 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import styles from "./sala.module.css";
 
-export default async function Sala({ params }) {
-  const id = params.id;
+export default async function Sala({ searchParams }) {
+  const id = searchParams.id;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
