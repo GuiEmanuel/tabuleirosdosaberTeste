@@ -6,8 +6,6 @@ import styles from "./sala.module.css";
 export default async function Sala({ params }) {
   const { id } = params;
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
   const resJogos = await fetch(
     `/api/jogos?id_sala=${id}`,
     { cache: "no-store" }
